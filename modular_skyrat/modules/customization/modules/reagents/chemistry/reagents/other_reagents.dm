@@ -8,7 +8,7 @@
 	process_flags = REAGENT_ORGANIC | REAGENT_SYNTHETIC
 
 /datum/reagent/pax
-	process_flags = REAGENT_ORGANIC | REAGENT_SYNTHETIC
+	process_flags = REAGENT_ORGANIC
 
 /datum/reagent/water
 	process_flags = REAGENT_ORGANIC | REAGENT_SYNTHETIC
@@ -93,3 +93,20 @@
 			qdel(i)
 
 #undef DERMAGEN_SCAR_FIX_AMOUNT
+
+/datum/reagent/target_reprocessing_nanites
+	name = "Target Reprocessing Nanites" //Pax for synths, adds flavor to synths
+	description = "A localized swarm of nanomachines that seem oddly passive."
+	color = "#cccccc"
+	taste_description = "metal"
+	metabolization_rate = 0.25 * REAGENTS_METABOLISM //Same metabolization rate as normal pax
+	ph = 15
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+	process_flags = REAGENT_SYNTHETIC
+	metabolized_traits = list(TRAIT_PACIFISM)
+
+/datum/chemical_reaction/target_reprocessing_nanites
+	results = list(/datum/reagent/medicine/target_reprocessing_nanites = 2)
+	required_reagents = list(/datum/reagent/nanite_slurry = 1, /datum/reagent/pax = 1)
+	required_catalysts = list(/datum/reagent/gold = 0.1)
+	mix_message = "The mixture becomes a metallic slurry."
