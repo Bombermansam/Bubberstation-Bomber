@@ -23,7 +23,7 @@
 	anchored = FALSE
 	mouse_drag_pointer = MOUSE_ACTIVE_POINTER
 	use_power = NO_POWER_USE
-	interaction_flags_mouse_drop = NEED_HANDS
+	//interaction_flags_mouse_drop = NEED_HANDS //Bubber Edit: Borgs used to be able to use IV Drips, this allows them to use it again
 
 	/// Information and effects about where the IV drip is attached to
 	var/datum/iv_drip_attachment/attachment
