@@ -71,6 +71,11 @@
 		"limbdesign_tajaran",
 	)
 
+/datum/techweb_node/cyber/cyber_implants/New()
+	. = ..()
+	design_ids += list(
+		"wound_scanner_internal"
+	)
 //ENGINEERING
 /datum/techweb_node/atmos/New()
 	. = ..()
@@ -166,6 +171,9 @@
 	design_ids += "m9mm_mag"
 	design_ids += "m45_mag"
 	design_ids += "solgrenade_mag"
+	design_ids += "ntusp_conversion"
+	design_ids += "ntusp_powerpack"
+	design_ids += "ntmp5_powerpack"
 	. = ..()
 
 /datum/techweb_node/exotic_ammo/New()
@@ -173,9 +181,6 @@
 	. = ..()
 
 /datum/techweb_node/syndicate_basic/New()
-	design_ids -= "mag_autorifle"
-	design_ids -= "mag_autorifle_ap"
-	design_ids -= "mag_autorifle_ic"
 	design_ids += "wt550_ammo_incendiary"
 	design_ids += "mod_mind_transfer"
 	. = ..()
